@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Accumulates • SmartSpend (HTML)</title>
+    <link rel="stylesheet" href="/mnt/data/html_scaffold/styles.css" />
+    <script defer src="/mnt/data/html_scaffold/app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/transactions.html">Transactions</a>
+        <a href="/bills.html">Bills</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/goals.html">Goals</a>
+        <a href="/accumulates.html">Accumulates</a>
+        <a href="/profile.html">Profile</a>
+        <span style="flex:1"></span>
+        <button onclick="logout()">Log out</button>
+      </div>
+      <div class="grid" style="grid-template-columns: 260px 1fr; align-items:start;">
+        <aside id="sidebar"></aside>
+        <main class="card">
+          <h1>Accumulates</h1>
+          <p>Accumulate savings / jars UI will go here.</p>
+        </main>
+      </div>
+      <div class="footer">Static HTML scaffold generated 2025-11-06 22:38</div>
+    </div>
+    <script>
+      renderSidebar('accumulates.html');
+      protect();
+    </script>
+  </body>
+</html>

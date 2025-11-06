@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Onboarding • Pay Cadence • SmartSpend (HTML)</title>
+    <link rel="stylesheet" href="/mnt/data/html_scaffold/styles.css" />
+    <script defer src="/mnt/data/html_scaffold/app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/transactions.html">Transactions</a>
+        <a href="/bills.html">Bills</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/goals.html">Goals</a>
+        <a href="/accumulates.html">Accumulates</a>
+        <a href="/profile.html">Profile</a>
+        <span style="flex:1"></span>
+        <button onclick="logout()">Log out</button>
+      </div>
+      <div class="grid" style="grid-template-columns: 260px 1fr; align-items:start;">
+        <aside id="sidebar"></aside>
+        <main class="card">
+          <h1>Onboarding • Pay Cadence</h1>
+          
+<p>Choose your pay cadence.</p>
+<div class="grid grid-2" style="max-width:520px">
+  <select id="pay">
+    <option value="weekly">Weekly</option>
+    <option value="biweekly">Biweekly</option>
+    <option value="monthly">Monthly</option>
+  </select>
+  <button onclick="(function(){
+    const v = qs('#pay').value;
+    localStorage.setItem('ss_pay_cadence', v);
+    setOnboarding('bills');
+    location.href='/onboarding-bills.html';
+  })()">Continue</button>
+</div>
+
+        </main>
+      </div>
+      <div class="footer">Static HTML scaffold generated 2025-11-06 22:38</div>
+    </div>
+    <script>
+      renderSidebar('onboarding');
+      protect();
+    </script>
+  </body>
+</html>

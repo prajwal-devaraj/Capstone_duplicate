@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Onboarding • Bills • SmartSpend (HTML)</title>
+    <link rel="stylesheet" href="/mnt/data/html_scaffold/styles.css" />
+    <script defer src="/mnt/data/html_scaffold/app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/transactions.html">Transactions</a>
+        <a href="/bills.html">Bills</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/goals.html">Goals</a>
+        <a href="/accumulates.html">Accumulates</a>
+        <a href="/profile.html">Profile</a>
+        <span style="flex:1"></span>
+        <button onclick="logout()">Log out</button>
+      </div>
+      <div class="grid" style="grid-template-columns: 260px 1fr; align-items:start;">
+        <aside id="sidebar"></aside>
+        <main class="card">
+          <h1>Onboarding • Bills</h1>
+          
+<p>Add a couple of recurring bills.</p>
+<div class="grid" style="max-width:620px">
+  <div class="grid grid-3">
+    <label>Bill 1<input id="b1" placeholder="Rent 900"></label>
+    <label>Bill 2<input id="b2" placeholder="Wifi 50"></label>
+    <label>Bill 3<input id="b3" placeholder="Electric 70"></label>
+  </div>
+  <button onclick="(function(){
+    const bills = [qs('#b1').value, qs('#b2').value, qs('#b3').value].filter(Boolean);
+    localStorage.setItem('ss_bills', JSON.stringify(bills));
+    setOnboarding('done');
+    location.href='/dashboard.html';
+  })()">Finish</button>
+</div>
+
+        </main>
+      </div>
+      <div class="footer">Static HTML scaffold generated 2025-11-06 22:38</div>
+    </div>
+    <script>
+      renderSidebar('onboarding');
+      protect();
+    </script>
+  </body>
+</html>
