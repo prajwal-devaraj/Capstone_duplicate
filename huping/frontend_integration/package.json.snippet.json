@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "dev:both": "concurrently -k \"npm:dev\" \"cd backend && python app.py\""
+  },
+  "devDependencies": { "concurrently": "^9.2.1" }
+}
